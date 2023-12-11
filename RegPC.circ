@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="16"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="1"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="2"/>
+      <a name="bit13" val="2"/>
+      <a name="bit14" val="2"/>
+      <a name="bit15" val="2"/>
+    </tool>
+    <tool name="Probe">
+      <a name="facing" val="west"/>
+      <a name="radix" val="10signed"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="label" val="Reset"/>
+    </tool>
+    <tool name="Constant">
+      <a name="width" val="16"/>
+      <a name="value" val="0x0"/>
+    </tool>
+    <tool name="Bit Extender">
+      <a name="in_width" val="9"/>
+      <a name="type" val="sign"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1">
+    <tool name="NOT Gate">
+      <a name="size" val="20"/>
+    </tool>
+    <tool name="AND Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool name="OR Gate">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </tool>
+  </lib>
+  <lib desc="#Plexers" name="2">
+    <tool name="Multiplexer">
+      <a name="width" val="16"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="3">
+    <tool name="Adder">
+      <a name="width" val="16"/>
+    </tool>
+    <tool name="Comparator">
+      <a name="width" val="16"/>
+    </tool>
+  </lib>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5">
+    <tool name="LED">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Arith"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool lib="1" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </tool>
+  </toolbar>
+
+  <circuit name="RegPC">
+    <a name="circuit" val="RegPC"/>
+    <a name="clabel" val="RegPC"/>
+    <a name="clabelup" val="north"/>
+    <a name="clabelfont" val="SansSerif plain 14"/>
+    <appear>
+      <rect fill="#ffffff" height="80" stroke="#ff0000" stroke-width="2" width="90" x="50" y="50"/>
+      <polyline fill="none" points="50,54 62,60 50,66" stroke="#000000"/>
+      <polyline fill="none" points="50,74 62,80 50,86" stroke="#000000"/>
+      <polyline fill="none" points="50,94 62,100 50,106" stroke="#000000"/>
+      <polyline fill="none" points="50,114 62,120 50,126" stroke="#000000"/>
+      <polyline fill="none" points="85,131 90,140 95,131" stroke="#000000"/>
+      <polyline fill="none" points="140,95 129,100 140,105" stroke="#000000"/>
+      <circ-port height="8" pin="340,460" width="8" x="136" y="96"/>
+      <circ-port height="8" pin="310,520" width="8" x="46" y="56"/>
+      <circ-port height="8" pin="310,540" width="8" x="46" y="76"/>
+      <circ-port height="8" pin="310,580" width="8" x="46" y="96"/>
+      <circ-port height="8" pin="310,600" width="8" x="46" y="116"/>
+      <circ-port height="10" pin="850,450" width="10" x="85" y="135"/>
+      <circ-anchor facing="east" height="6" width="6" x="47" y="57"/>
+    </appear>
+    <wire from="(730,470)" to="(730,580)"/>
+    <wire from="(310,540)" to="(340,540)"/>
+    <wire from="(310,520)" to="(340,520)"/>
+    <wire from="(310,600)" to="(740,600)"/>
+    <wire from="(750,450)" to="(850,450)"/>
+    <wire from="(740,470)" to="(740,600)"/>
+    <wire from="(310,580)" to="(730,580)"/>
+    <comp lib="4" loc="(750,450)" name="Register">
+      <a name="width" val="16"/>
+      <a name="trigger" val="falling"/>
+      <a name="label" val="PC"/>
+    </comp>
+    <comp lib="0" loc="(310,520)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cond"/>
+    </comp>
+    <comp lib="0" loc="(340,460)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="JMP Address"/>
+    </comp>
+    <comp lib="0" loc="(310,540)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="CTRL"/>
+    </comp>
+    <comp lib="0" loc="(850,450)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="label" val="PC"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(310,600)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Reset"/>
+    </comp>
+    <comp lib="0" loc="(310,580)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Clock"/>
+    </comp>
+  </circuit>
+
+</project>
