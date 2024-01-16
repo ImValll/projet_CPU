@@ -104,6 +104,26 @@ SUB R7 R7 1
 LD R5 R7
 """
 
+instructions = """
+XOR R0 R0 R0
+ADD R1 R0 1
+ADD R2 R0 4
+ADD R3 R0 13
+ADD R4 R3 R2
+ADD R7 R0 50
+STR R4 R7
+"""
+
+instructions = """
+XOR R0 R0 R0
+ADD R1 R0 55
+ADD R7 R0 10
+STR R1 R7
+ADD R6 R6 5
+LD R4 R7
+ADD R6 R6 5
+"""
+
 instructions_list = instructions.strip().split('\n')
 
 for instruction in instructions_list:
