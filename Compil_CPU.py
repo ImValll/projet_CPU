@@ -106,16 +106,6 @@ LD R5 R7
 
 instructions = """
 XOR R0 R0 R0
-ADD R1 R0 1
-ADD R2 R0 4
-ADD R3 R0 13
-ADD R4 R3 R2
-ADD R7 R0 50
-STR R4 R7
-"""
-
-instructions = """
-XOR R0 R0 R0
 ADD R1 R0 55
 ADD R7 R0 10
 STR R1 R7
@@ -124,11 +114,21 @@ LD R4 R7
 ADD R6 R6 5
 """
 
+instructions = """
+XOR R0 R0 R0
+XOR R7 R7 R7
+ADD R1 R0 37
+JEQU R1 R7 6
+ADD R7 R7 1
+JMP 2
+"""
+
 instructions_list = instructions.strip().split('\n')
 
 for instruction in instructions_list:
     resultat = traduire_instruction(instruction)
     #print(len(resultat))
     #print(f"Instruction binaire traduite ({instruction}): {resultat}")
+    resultatBin = resultat
     resultat = bin_to_hexa(resultat)
-    print(f"Instruction Hexa traduite ({instruction}): {resultat}")
+    print(f"Instruction Hexa traduite ({instruction})({resultatBin}): {resultat}")
