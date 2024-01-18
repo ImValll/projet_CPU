@@ -2,9 +2,9 @@ import re
 import random
 
 #Opérations réalisées par l'UAL
-operationsUAL = ['ADD', 'SUB', 'AND', 'OR', 'XOR', 'SL', 'SR']
+operationsUAL = ['ADD', 'SUB', 'AND', 'OR', 'XOR', 'SL', 'SR', 'MUL']
 operationsMEM = ['STR', 'LD']
-operationsCTRL = ['JMP', 'JEQU', 'JNEQ', 'JSUP','JINF','CALL','RET']
+operationsCTRL = ['JMP', 'JEQU', 'JNEQ', 'JSUP','JINF', 'JEIN','CALL','RET']
 
 labels = {'F' : '0101010101010101'}
 
@@ -91,19 +91,17 @@ def traduire_instruction(instruction):
         return "Format d'instruction invalide"
 
 operation_aleatoire = random.choice(operationsMEM)
+
 instructions = """
 XOR R0 R0 R0
-ADD R1 R0 1
+ADD R1 R0 2
 ADD R2 R0 4
-ADD R3 R0 13
-ADD R4 R3 R2
-ADD R7 R0 50
-STR R4 R7
-ADD R7 R7 1
-SUB R7 R7 1
-LD R5 R7
+CALL 10
+ADD R6 R0 1
+MUL R3 R1 R2
+RET 0
+ADD R5 R0 1
 """
-
 instructions = """
 XOR R0 R0 R0
 ADD R1 R0 55
@@ -112,15 +110,6 @@ STR R1 R7
 ADD R6 R6 5
 LD R4 R7
 ADD R6 R6 5
-"""
-
-instructions = """
-XOR R0 R0 R0
-XOR R7 R7 R7
-ADD R1 R0 37
-JEQU R1 R7 6
-ADD R7 R7 1
-JMP 2
 """
 
 instructions_list = instructions.strip().split('\n')
