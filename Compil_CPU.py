@@ -99,13 +99,24 @@ ADD R2 R0 4
 CALL 10
 ADD R6 R0 1
 MUL R3 R1 R2
-RET 0
+RET 4
 ADD R5 R0 1
 """
 instructions = """
 XOR R7 R7 R7
 ADD R7 R7 16
 LD R4 R7
+"""
+
+instructions = """
+XOR R0 R0 R0
+ADD R1 R0 2
+ADD R2 R0 4
+CALL 10
+ADD R6 R0 1
+MUL R3 R1 R2
+RET 4
+ADD R5 R0 1
 """
 
 instructions_list = instructions.strip().split('\n')
