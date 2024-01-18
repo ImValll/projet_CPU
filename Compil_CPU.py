@@ -103,13 +103,9 @@ RET 0
 ADD R5 R0 1
 """
 instructions = """
-XOR R0 R0 R0
-ADD R1 R0 55
-ADD R7 R0 10
-STR R1 R7
-ADD R6 R6 5
+XOR R7 R7 R7
+ADD R7 R7 16
 LD R4 R7
-ADD R6 R6 5
 """
 
 instructions_list = instructions.strip().split('\n')
