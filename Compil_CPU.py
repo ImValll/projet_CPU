@@ -119,6 +119,16 @@ RET 4
 ADD R5 R0 1
 """
 
+#factorielle ??
+instructions = """
+XOR R0 R0 R0
+ADD R1 R0 1
+ADD R2 R0 1
+ADD R4 R0 2
+MUL R2 R2 R1
+ADD R1 R1 1
+JINF R1 R4 4
+"""
 instructions_list = instructions.strip().split('\n')
 
 for instruction in instructions_list:
