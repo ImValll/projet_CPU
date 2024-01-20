@@ -121,13 +121,34 @@ ADD R5 R0 1
 
 #factorielle ??
 instructions = """
+XOR R7 R7 R7
+ADD R7 R7 100
+JMP 3
 XOR R0 R0 R0
-ADD R1 R0 1
-ADD R2 R0 1
-ADD R4 R0 2
-MUL R2 R2 R1
-ADD R1 R1 1
-JINF R1 R4 4
+ADD R0 R0 7   
+CALL 9
+XOR R4 R4 R4
+ADD R4 R4 R0
+JMP 5
+XOR R1 R1 R1     
+ADD R1 R1 1    
+JSUP R0 R1 14
+ADD R0 R1 0
+RET 1
+ADD R7 R7 1   
+STR R0 R7
+SUB R0 R0 1   
+CALL 9 
+JMP 19   
+LD R1 R7
+SUB R7 R7 1
+MUL R0 R0 R1
+RET 1
+ADD R0 R0 5
+ADD R2 R0 5
+ADD R0 R2 5
+ADD R2 R2 5
+ADD R3 R3 5
 """
 instructions_list = instructions.strip().split('\n')
 
